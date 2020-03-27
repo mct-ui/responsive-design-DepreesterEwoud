@@ -202,6 +202,11 @@ a:focus {
         padding-right: 48px;
     }
 
+    .o-row--md{
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
     .o-row--lg {
         padding-top: 72px;
         padding-bottom: 48px;
@@ -217,6 +222,32 @@ a:focus {
     list-style: none;
     padding: 0;
 }
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
 /*
     Objects: Container
     ---
@@ -408,6 +439,28 @@ a:focus {
 .c-nav--meta{
     font-size: 16px;
 }
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .c-header__nav {
+        display: flex;
+    }
+}
+
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
@@ -440,6 +493,15 @@ a:focus {
 
 .u-max-width-none {
     max-width: none !important;
+}
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
 }
 
 /*
